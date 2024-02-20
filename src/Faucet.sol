@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 contract Faucet is Ownable {
 
-    constructor() {}
+    constructor() Ownable(msg.sender) {}
 
     mapping (address => uint256) public amount;
     mapping (address => mapping (address => uint)) public lastDrip;
